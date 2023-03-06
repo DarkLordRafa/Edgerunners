@@ -1,0 +1,272 @@
+@font-face {
+  font-family: "Noto";
+  src: url("../fonts/Noto.ttf")
+  format("truetype");
+}
+
+@font-face {
+  font-family: "Marker";
+  src: url("../fonts/Marker.ttf")
+  format("truetype");
+}
+
+@font-face {
+  font-family: "Aleo";
+  src: url("../fonts/Aleo.otf")
+  format("truetype");
+}
+
+
+.david-page{
+	background-image: url("../images/general/David.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.medley-page{
+	background-image: url("../images/general/Medley.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.claudette-page{
+	background-image: url("../images/general/claudette.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.brad-page{
+	background-image: url("../images/general/Brad.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.character-name{
+	font-family: "Noto";
+	font-size: 7vw;
+	color: white;
+}
+
+.stats-area{
+	bottom: 0;
+	left: 0;
+	height: 100vw;
+	width: 80vw;
+	transition: 0.7s;
+}
+
+.attributes-area, .skills-area, .skill-description{
+	background-image: url("../images/general/attributes_bg.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	height: 100%;
+}
+
+.stats-area ul{
+	width: 80vw;
+}
+
+.stats-area h2{
+	font-family: "Marker";
+	font-size: 6vw;
+	color: black;
+}
+
+.stats-area ul li{
+	font-size: 4.5vw;
+	font-family: "Aleo";
+	font-weight: bold;
+	color: black;
+	width: 80%;
+}
+
+.stats-area .block2{
+	font-size: 6vw;
+}
+
+.stats-area ul li img{
+	height: 8vw;
+	width: 8vw;
+	object-fit: contain;
+}
+
+#reset-button{
+	font-family: Arial, Sans-Serif;
+	font-size: 5vw;
+	font-weight: 900;
+	text-decoration: underline;
+	bottom: 5vw;
+	z-index: 5;
+}
+
+.confirm-reset-screen__content{
+	background-color: #e1c598;
+	margin-top: 40vh;
+	text-align: center;
+}
+
+.confirm-reset-screen h3{
+	font-family: Arial, Sans-Serif;
+	font-size: 6vw;
+	font-weight: bold;
+	color: black;
+}
+
+.confirm-reset-button, .cancel-reset-button{
+	font-family: "Marker";
+	font-size: 6vw;
+	color: black;
+	background-color: #CD7F32;
+	padding: 1vw;
+	border-radius: 5px;
+	min-width: 25vw;
+	border: 4px solid #A0522D;
+}
+
+.confirm-reset-button:hover, .cancel-reset-button:hover{
+	background-color: #8B4513;
+}
+
+.return-button{
+	top: 5vh;
+	left: 5vw;
+}
+
+.return-button img{
+	height: 15vw;
+}
+
+.character-stats-toggle-button{
+	background-color: #e1c598;
+	border-radius: 5px;
+	height: 7vh;
+	width: 9vh;
+	bottom: calc(100vw);
+	left: 3vw;
+	transition: opacity 0.7s;
+}
+
+.character-stats-toggle-button img{
+	height: 90%;
+	width: 90%;
+	object-fit: contain;
+}
+
+.character-stats-toggle-button:active{
+	background-color: #8B4513;
+}
+
+.stats-area-disabled{
+	transform: translateX(-80vw);
+}
+
+.character-stats-toggle-button-hidden{
+	opacity: 0.5;
+}
+
+.skills-area li{
+	font-size: 5vw!important;
+}
+
+.hp-sa-text{
+	font-size: 4.5vw;
+	font-family: "Aleo";
+	font-weight: bold;
+	color: black;
+}
+
+.life-bar-area, .sandevistan-energy-bar-area{
+	width: 65vw;
+	height: 7vw;
+	border: 2px solid black;
+	text-align: center;
+	position: relative;
+}
+
+
+.life-bar, .sandevistan-energy-bar{
+	position: absolute;
+	height: 100%;
+	z-index: 1;
+}
+
+.life-bar{
+	background-color: #EE4B2B;
+	width: 100%;
+	transition: 1.5s ease-out;
+}
+
+.sandevistan-energy-bar{
+	background-color: rgb(255, 196, 0);
+	width: 100%;
+	transition: 1.5s ease-out;
+}
+
+#eurodollar-area{
+	width: 65vw;
+}
+
+#eurodollar-area .attribute-icon{
+	font-family: "Aleo";
+	font-weight: bold;
+	color: black;
+}
+
+.character-stats-switch-button{
+	background-color: #e1c598;
+	border-radius: 5px;
+	height: 5vh;
+	width: 7vh;
+	bottom: calc(100vw);
+	left: 55vw;
+	transition: opacity 0.7s;
+}
+
+.character-stats-switch-button img{
+	height: 90%;
+	width: 90%;
+	border: 3px solid black;
+	border-radius: 5px;
+	object-fit: contain;
+}
+
+.character-stats-switch-button:active{
+	background-color: #8B4513;
+}
+
+.life-value, .sandevistan-energy-value{
+	position: absolute;
+	z-index: 2;
+	display: block;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	color: black;
+	font-size: 5vw;
+	font-weight: bold;
+}
+
+.skill-description{
+	width: 100%;
+	z-index: 6;
+}
+
+.skill-description .close-button{
+	font-size: 8vw;
+	font-family: Arial;
+	font-weight: bold;
+	color: black;
+}
+
+.skill-description p{
+	font-size: 5vw;
+	font-family: "Aleo";
+	font-weight: bold;
+	color: black;
+}
+

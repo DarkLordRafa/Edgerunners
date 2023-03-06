@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Medley</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable='no'" />
+		<meta name="theme-color" content="black" />
+		<link rel="stylesheet" href="assets/bootstrap5/css/bootstrap.min.css" type="text/css" />
+		<link rel="stylesheet" href="assets/css/main.css" type="text/css" />
+		<link rel="stylesheet" href="assets/css/reset.css" type="text/css" />
+		<link rel="shortcut icon" href="assets/images/icons/favicon.png" type="image/png" sizes="32x32" />
+	</head>
+	<body class="medley-page">
+		
+		<main class="d-flex flex-column align-items-center position-relative h-100 w-100">
+			<h1 class="character-name mt-2">medley</h1>
+			
+			<div class="return-button position-absolute">
+				<a href="index.html">
+					<img src="assets/images/icons/return.png" />
+				</a>
+			</div>
+			
+			<div class="character-stats-toggle-button position-absolute d-flex justify-content-center align-items-center">
+				<img src="assets/images/icons/toggle_button.png" />
+			</div>
+			
+			<div class="character-stats-switch-button position-absolute d-flex justify-content-center align-items-center">
+				<img src="assets/images/icons/switch.png" />
+			</div>
+			
+			<div class="stats-area position-absolute d-flex flex-column align-items-center">
+				<div class="attributes-area d-flex flex-column align-items-center position-absolute">
+					<h2 class="mt-3">Atributos</h2>
+					<ul class="ps-0 mb-0 mt-1 d-flex flex-column justify-content-center align-items-center">
+						<li class="mb-1 d-flex align-items-center justify-content-between">
+							<div class="block1 d-flex align-items-center">
+								<img class="me-2" src="assets/images/icons/strength.png" />
+								<span class="attribute">
+									Força
+								</span>
+							</div>
+							<div class="block2 d-flex justify-content-center align-items-center">
+								<span class="attribute-icon" id="strength-decrease">
+									-
+								</span>
+								<span class="ms-3 me-3" id="strength">
+									1
+								</span>
+								<span class="attribute-icon" id="strength-increase">
+									+
+								</span>
+							</div>
+						</li>
+						<li class="d-flex align-items-center justify-content-between">
+							<div class="block1 d-flex align-items-center">
+								<img class="me-2" src="assets/images/icons/agility.png" />
+								<span class="attribute">
+									Agilidade
+								</span>
+							</div>
+							<div class="block2 d-flex justify-content-center align-items-center">
+								<span class="attribute-icon" id="agility-decrease">
+									-
+								</span>
+								<span class="ms-3 me-3" id="agility">
+									1
+								</span>
+								<span class="attribute-icon" id="agility-increase">
+									+
+								</span>
+							</div>
+						</li>
+						<li class="mb-1 d-flex align-items-center justify-content-between">
+							<div class="block1 d-flex align-items-center">
+								<img class="me-2" src="assets/images/icons/accuracy.png" />
+								<span class="attribute">
+									Precisão
+								</span>
+							</div>
+							<div class="block2 d-flex justify-content-center align-items-center">
+								<span class="attribute-icon" id="accuracy-decrease">
+									-
+								</span>
+								<span class="ms-3 me-3" id="accuracy">
+									1
+								</span>
+								<span class="attribute-icon" id="accuracy-increase">
+									+
+								</span>
+							</div>
+						</li>
+						<li class="mb-1 d-flex align-items-center justify-content-between">
+							<div class="block1 d-flex align-items-center">
+								<img class="me-2" src="assets/images/icons/stealth.png" />
+								<span class="attribute">
+									Furtividade
+								</span>
+							</div>
+							<div class="block2 d-flex justify-content-center align-items-center">
+								<span class="attribute-icon" id="stealth-decrease">
+									-
+								</span>
+								<span class="ms-3 me-3" id="stealth">
+									1
+								</span>
+								<span class="attribute-icon" id="stealth-increase">
+									+
+								</span>
+							</div>
+						</li>
+						<li class="d-flex align-items-center justify-content-between">
+							<div class="block1 d-flex align-items-center">
+								<img class="me-2" src="assets/images/icons/hacking.png" />
+								<span class="attribute">
+									Hackeamento
+								</span>
+							</div>
+							<div class="block2 d-flex justify-content-center align-items-center">
+								<span class="attribute-icon" id="hacking-decrease">
+									-
+								</span>
+								<span class="ms-3 me-3" id="hacking">
+									1
+								</span>
+								<span class="attribute-icon" id="hacking-increase">
+									+
+								</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="skills-area d-flex flex-column align-items-center position-absolute d-none">
+					<h2 class="mt-3 text-center">Status</h2>
+					<ul class="ps-0 mb-3 mt-1 d-flex flex-column justify-content-center align-items-center">
+						<li class="mb-1 d-flex align-items-center justify-content-between">
+							<div class="block1 d-flex align-items-center">
+								<img class="me-2" src="assets/images/icons/medley_weapon.png" />
+								<span class="skill" id="weapon-label">
+									Rifle de plasma
+								</span>
+							</div>
+							<div class="block2 d-flex justify-content-center align-items-center">
+								<span class="attribute-icon" id="weapon-decrease">
+									-
+								</span>
+								<span class="ms-3 me-3" id="weapon">
+									1
+								</span>
+								<span class="attribute-icon" id="weapon-increase">
+									+
+								</span>
+							</div>
+						</li>
+						<li class="mb-1 d-flex align-items-center justify-content-between d-none">
+							<div class="block1 d-flex align-items-center">
+								<img class="me-2" src="assets/images/icons/cyberpsychosis.png" />
+								<span class="skill" id="cromo-label">
+									Cyber Psicose
+								</span>
+							</div>
+							<div class="block2 d-flex justify-content-center align-items-center">
+								<span class="attribute-icon" id="cromo-decrease">
+									-
+								</span>
+								<span class="ms-3 me-3" id="cromo">
+									1
+								</span>
+								<span class="attribute-icon" id="cromo-increase">
+									+
+								</span>
+							</div>
+						</li>
+					</ul>
+					<div class="block2 d-flex justify-content-center align-items-center position-relative mt-1 mb-2" id="eurodollar-area">
+						<span class="attribute-icon position-absolute start-0" id="eurodollar-decrease">
+							-
+						</span>
+						<span>E$:</span>
+						<span class="ms-1 me-0" id="eurodollar-value">
+							5000
+						</span>
+						<span class="attribute-icon position-absolute end-0" id="eurodollar-increase">
+							+
+						</span>
+					</div>
+					<span class="hp-sa-text">Vida</span>
+					<div class="life-bar-area">
+						<div class="life-bar">
+						</div>
+						<span class="life-value">
+							1
+						</span>
+					</div>
+					<span class="hp-sa-text">?</span>
+					<div class="sandevistan-energy-bar-area">
+						<div class="sandevistan-energy-bar">
+						</div>
+						<span class="sandevistan-energy-value">
+							1
+						</span>
+					</div>
+				</div>
+				
+				<div class="skill-description position-absolute ps-4 pe-4 d-none">
+					<span class="close-button d-block mt-3 text-end pe-2">x</span>
+					<p class="mt-1"></p>
+				</div>
+				<span class="position-absolute" id="reset-button">Redefinir
+				</span>
+			</div>
+			
+			<div class="confirm-reset-screen position-absolute h-100 w-100 d-none">
+				<div class="confirm-reset-screen__content d-flex flex-column justify-content-center align-items-center p-3">
+					<h3>Quer mesmo redefinir os atributos do personagem?</h3>
+					<div class="confirm-reset-buttons-area d-flex mt-2">
+						<div class="cancel-reset-button me-3">
+							Não
+						</div>
+						<div class="confirm-reset-button">
+							Sim
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		<script src="assets/js/medley.js" type="text/javascript">
+		</script>
+	</body>
+</html>
