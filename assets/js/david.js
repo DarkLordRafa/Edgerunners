@@ -161,7 +161,10 @@ function percentage(numA, numB){
 
 function changeHpSa(bar, barValue, propertyName, maxPropertyName){
 	let newValue = parseInt(prompt("Insira o novo valor:"));
-	if (newValue !== "" && newValue !== null && newValue !== NaN){
+	if (isNaN(newValue)){
+		newValue = 00;
+	}
+	if (newValue !== "" && newValue !== null && newValue !== 00){
 		if (newValue > david[maxPropertyName]){
 			david[maxPropertyName] = newValue;
 		}
