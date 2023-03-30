@@ -53,86 +53,86 @@ const cromoLabel = document.querySelector("#cromo-label");
 const weapon = document.querySelector("#weapon");
 const cromo = document.querySelector("#cromo");
 
-const weaponText = "David pode utilizar seus amuletos para encarar diversas situações, seja para identificar uma criatura ou mesmo em combate.";
-const cromoText = "David lança uma de suas âmpolas de água benta no inimigo, causando pouco dano mas com acerto garantido.";
+const weaponText = "Medley pode utilizar seus amuletos para encarar diversas situações, seja para identificar uma criatura ou mesmo em combate.";
+const cromoText = "Medley lança uma de suas âmpolas de água benta no inimigo, causando pouco dano mas com acerto garantido.";
 
 
-let david;
+let medley;
 
 
 function increaseAttribute(propertyName, element){
-	david[propertyName] ++;
-	element.innerHTML = david[propertyName];
+	medley[propertyName] ++;
+	element.innerHTML = medley[propertyName];
 }
 
 function decreaseAttribute(propertyName, element){
-	david[propertyName] --;
-	element.innerHTML = david[propertyName];
+	medley[propertyName] --;
+	element.innerHTML = medley[propertyName];
 }
 
 function increaseEurodollar(){
 	let value = parseInt(prompt("Insira o valor recebido:"));
 	if (value !== "" && value !== null){
-		david.eurodollar += value;
+		medley.eurodollar += value;
 	}
-	eurodollarValue.innerHTML = david.eurodollar;
-	window.localStorage.setItem("david_key", JSON.stringify(david));
+	eurodollarValue.innerHTML = medley.eurodollar;
+	window.localStorage.setItem("medley_key", JSON.stringify(medley));
 }
 
 function decreaseEurodollar(){
 	let value = parseInt(prompt("Insira o valor gasto:"));
 	if (value !== "" && value !== null){
-		david.eurodollar -= value;
+		medley.eurodollar -= value;
 	}
-	eurodollarValue.innerHTML = david.eurodollar;
-	window.localStorage.setItem("david_key", JSON.stringify(david));
+	eurodollarValue.innerHTML = medley.eurodollar;
+	window.localStorage.setItem("medley_key", JSON.stringify(medley));
 }
 
 function displayAttributes(){
-	lifeValue.innerHTML = david.life;
-	sandevistanValue.innerHTML = david.sandevistanValue;
-	lifeBar.style.width = `${percentage(david.life, david.maxLife)}%`;
-	sandevistanValueBar.style.width = `${percentage(david.sandevistanValue, david.maxSandevistanValue)}%`;
-	strengthAttribute.innerHTML = david.strength;
-	hackingAttribute.innerHTML = david.hacking;
-	accuracyAttribute.innerHTML = david.accuracy;
-	agilityAttribute.innerHTML = david.agility;
-	stealthAttribute.innerHTML = david.stealth;
-	weapon.innerHTML = david.weapon;
-	cromo.innerHTML = david.cromo;
-	eurodollarValue.innerHTML = david.eurodollar;
+	lifeValue.innerHTML = medley.life;
+	sandevistanValue.innerHTML = medley.sandevistanValue;
+	lifeBar.style.width = `${percentage(medley.life, medley.maxLife)}%`;
+	sandevistanValueBar.style.width = `${percentage(medley.sandevistanValue, medley.maxSandevistanValue)}%`;
+	strengthAttribute.innerHTML = medley.strength;
+	hackingAttribute.innerHTML = medley.hacking;
+	accuracyAttribute.innerHTML = medley.accuracy;
+	agilityAttribute.innerHTML = medley.agility;
+	stealthAttribute.innerHTML = medley.stealth;
+	weapon.innerHTML = medley.weapon;
+	cromo.innerHTML = medley.cromo;
+	eurodollarValue.innerHTML = medley.eurodollar;
 }
 
 function resetStats(){
-	window.localStorage.removeItem("david_key");
-	getDavid();
+	window.localStorage.removeItem("medley_key");
+	getMedley();
 	displayAttributes();
 	confirmResetScreen.classList.add("d-none");
 }
 
 
-const getDavid = () =>{
+const getMedley = () =>{
 	try {
 	//Variável recebendo o objeto salvo (não significa que ele exista, sendo assim, o teste não falha mesmo se o objeto não existir)
-		david = JSON.parse(window.localStorage.getItem("david_key"));
-	//Já a partir daqui, o código tenta atribuir os valores salvos no objeto da variável aos elementos html, algo que só vai acontecer se a variável david possuir esses valores, ou seja, se ela recebeu um objeto salvo no localStorage.
+		medley = JSON.parse(window.localStorage.getItem("medley_key"));
+	//Já a partir daqui, o código tenta atribuir os valores salvos no objeto da variável aos elementos html, algo que só vai acontecer se a variável medley possuir esses valores, ou seja, se ela recebeu um objeto salvo no localStorage.
 	
 	//Se os elementos não conseguirem receber os valores, significa que essees valores não existem, assim como o objeto requisitado, então o teste falha e passa para o catch
-		lifeValue.innerHTML = david.life;
-		sandevistanValue.innerHTML = david.sandevistanValue;
-		lifeBar.style.width = `${percentage(david.life, david.maxLife)}%`;
-		sandevistanValueBar.style.width = `${percentage(david.sandevistanValue, david.maxSandevistanValue)}%`;
-		strengthAttribute.innerHTML = david.strength;
-		hackingAttribute.innerHTML = david.hacking;
-		accuracyAttribute.innerHTML = david.accuracy;
-		agilityAttribute.innerHTML = david.agility;
-		stealthAttribute.innerHTML = david.agility;
-		weapon.innerHTML = david.weapon;
-		cromo.innerHTML = david.cromo;
-		eurodollarValue.innerHTML = david.eurodollar;
+		lifeValue.innerHTML = medley.life;
+		sandevistanValue.innerHTML = medley.sandevistanValue;
+		lifeBar.style.width = `${percentage(medley.life, medley.maxLife)}%`;
+		sandevistanValueBar.style.width = `${percentage(medley.sandevistanValue, medley.maxSandevistanValue)}%`;
+		strengthAttribute.innerHTML = medley.strength;
+		hackingAttribute.innerHTML = medley.hacking;
+		accuracyAttribute.innerHTML = medley.accuracy;
+		agilityAttribute.innerHTML = medley.agility;
+		stealthAttribute.innerHTML = medley.agility;
+		weapon.innerHTML = medley.weapon;
+		cromo.innerHTML = medley.cromo;
+		eurodollarValue.innerHTML = medley.eurodollar;
 	}
 	catch {
-		david = {
+		medley = {
 		life: 30,
 		sandevistanValue: 60,
 		maxLife: 30,
@@ -152,7 +152,7 @@ const getDavid = () =>{
 	}
 };
 
-getDavid();
+getMedley();
 
 
 function percentage(numA, numB){
@@ -165,14 +165,14 @@ function changeHpSa(bar, barValue, propertyName, maxPropertyName){
 		newValue = 00;
 	}
 	if (newValue !== "" && newValue !== null && newValue !== 00){
-		if (newValue > david[maxPropertyName]){
-			david[maxPropertyName] = newValue;
+		if (newValue > medley[maxPropertyName]){
+			medley[maxPropertyName] = newValue;
 		}
-		david[propertyName] = newValue;
-		bar.style.width = `${percentage(david[propertyName], david[maxPropertyName])}%`;
+		medley[propertyName] = newValue;
+		bar.style.width = `${percentage(medley[propertyName], medley[maxPropertyName])}%`;
 	}
-	barValue.innerHTML = david[propertyName];
-	window.localStorage.setItem("david_key", JSON.stringify(david));
+	barValue.innerHTML = medley[propertyName];
+	window.localStorage.setItem("medley_key", JSON.stringify(medley));
 }
 
 
@@ -259,7 +259,7 @@ sandevistanValue.addEventListener("click", function(){
 
 attributeButtons.forEach(function(element){
 	element.addEventListener("click", function(){
-		window.localStorage.setItem("david_key", JSON.stringify(david));
+		window.localStorage.setItem("medley_key", JSON.stringify(medley));
 	});
 });
 
