@@ -71,18 +71,24 @@ function decreaseAttribute(propertyName, element){
 }
 
 function increaseEurodollar(){
-	let value = parseInt(prompt("Insira o valor recebido:"));
-	if (value !== "" && value !== null){
-		brad.eurodollar += value;
+	let newValue = parseInt(prompt("Insira o valor recebido:"));
+	if (isNaN(newValue)){
+		newValue = 00;
+	}	
+	if (newValue !== "" && newValue !== null && newValue !== 00){
+		brad.eurodollar += newValue;
 	}
 	eurodollarValue.innerHTML = brad.eurodollar;
 	window.localStorage.setItem("brad_key", JSON.stringify(brad));
 }
 
 function decreaseEurodollar(){
-	let value = parseInt(prompt("Insira o valor gasto:"));
-	if (value !== "" && value !== null){
-		brad.eurodollar -= value;
+	let newValue = parseInt(prompt("Insira o valor gasto:"));
+	if (isNaN(newValue)){
+		newValue = 00;
+	}	
+	if (newValue !== "" && newValue !== null && newValue !== 00){
+		brad.eurodollar -= newValue;
 	}
 	eurodollarValue.innerHTML = brad.eurodollar;
 	window.localStorage.setItem("brad_key", JSON.stringify(brad));
